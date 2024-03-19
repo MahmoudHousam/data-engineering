@@ -34,6 +34,7 @@ This repository is dedicated to honing skills in data engineering through practi
 - Module 2: Workflow Orchestration
   - Data Lake
   - Mage
+  - Airflow
 - Module 3: Data Warehouse
   - Data Warehouse
   - BigQuery
