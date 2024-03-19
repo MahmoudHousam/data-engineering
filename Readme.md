@@ -1,10 +1,6 @@
 # Practice Makes Perfect - Data Engineering
 
-This repository is dedicated to honing skills in data engineering through practical projects and exercises. The objective behind this repository is to provide hands-on experience with various technologies and tools commonly used in the field of data engineering.
-
-## Objective
-
-The main objective of this repository is to develop proficiency in data engineering by working on real-world projects and exercises. By leveraging Python and SQL programming languages, along with a diverse set of technologies and tools, this repository aims to provide comprehensive learning opportunities in data engineering concepts and practices.
+This repository is dedicated to honing skills in data engineering through practical projects and exercises. The objective behind this repository is to provide hands-on experience by leveraging Python and SQL programming languages, along with a diverse set of technologies and tools commonly used in the field of data engineering.
 
 ## Tech Stack
 
@@ -18,12 +14,13 @@ The main objective of this repository is to develop proficiency in data engineer
 - Docker
 - Terraform
 - PostgreSQL
-- Apache Spark (Python & SQL)
 - Google Cloud Platform (GCP)
 - Mage
 - BigQuery
 - DBT (Data Build Tool)
+- Apache Spark (Python & SQL)
 - Kafka
+- Faust
 - KSQL
 - ksqlDB
 - Make
@@ -31,11 +28,27 @@ The main objective of this repository is to develop proficiency in data engineer
 ## Modules
 
 - Module 1: Containerization and Infrastructure as Code (IaC)
+  - Docker
+  - Terraform
+  - GCP
 - Module 2: Workflow Orchestration
+  - Data Lake
+  - Mage
 - Module 3: Data Warehouse
+  - Data Warehouse
+  - BigQuery
 - Module 4: Analytics engineering
+  - ELT vs. ETL
+  - DBT
+  - Testing (unit & integration testing)
 - Module 5: Batch processing
+  - Apache Spark (Python & SQL)
 - Module 6: Streaming
+  - Kafka
+  - Faust
+  - KSQL
+  - ksqlDB
+  - Exposure to examples with Java & Scala
 
 ## Workshops
 
