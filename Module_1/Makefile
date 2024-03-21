@@ -17,7 +17,7 @@ postgres:
 	--rm -d \
 	postgres:13
 
-postgres down:
+postgres_down:
 	docker stop pg-database
 
 pgadmin:
@@ -31,7 +31,7 @@ pgadmin:
 	dpage/pgadmin4
 
 
-pgadmin down:
+pgadmi_down:
 	docker stop pg-admin4
 
 
