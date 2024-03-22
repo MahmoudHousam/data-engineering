@@ -29,7 +29,7 @@ If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `c
 
 ## Installing Dokcer
 
-`choco install docker`
+`choco install docker-desktop`
 
 ## Installing Terrform
 
