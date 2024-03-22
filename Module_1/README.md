@@ -70,7 +70,7 @@ IAM Roles for Service account:
 
 - Click the Edit principal icon for your service account.
 
-- Add these roles in addition to Viewer : **Storage Admin + Storage Object Admin + BigQuery Admin**
+- Add these roles : **Storage Admin + Storage Object Admin + BigQuery Admin**
 
 - Enable these APIs for your project:
 
