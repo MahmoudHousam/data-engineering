@@ -1,4 +1,4 @@
-# You Need to Know
+# Module Setup
 
 This file aims at instructing the user to have the following setup:
 
