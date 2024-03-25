@@ -51,8 +51,22 @@ Open a PowerShell terminal and run the following PowerShell commands:
 
 - Create a GCP account with your Gmail account
 - Setup your first project. Read the bold notes provided by Google and keep a careful eye on it.
-- Set up Application Default Credentials (ACD). Just write this command in your terminal `gcloud auth application-default login`. For more detailed info, visit the [ACD Offecial Documentation](https://cloud.google.com/docs/authentication/provide-credentials-adc?_gl=1*1bnte70*_ga*MTkyNzM4MTU5Ni4xNzA0MDMzOTc3*_ga_WH2QY8WWF5*MTcxMTA3NTEyMy4yNC4xLjE3MTEwNzk2NjguMC4wLjA.&_ga=2.15902966.-1927381596.1704033977)
-- Create a service account key using the Google Cloud console, the gcloud CLI, the `serviceAccounts.keys.create()` method, or one of the [client libraries](https://cloud.google.com/apis/docs/cloud-client-libraries). A service account can have up to 10 keys. For more detailed info, visit the [Service Account Keys Offecial Documentation](https://cloud.google.com/iam/docs/keys-create-delete?_gl=1*1bnte70*_ga*MTkyNzM4MTU5Ni4xNzA0MDMzOTc3*_ga_WH2QY8WWF5*MTcxMTA3NTEyMy4yNC4xLjE3MTEwNzk2NjguMC4wLjA.&_ga=2.15902966.-1927381596.1704033977)
+- Set up Application Default Credentials (ACD). Use these commands in your terminal to create the ACD file
+
+  - `gcloud init`
+  - `gcloud auth application-default login`.
+
+  For more detailed info, visit the [ACD Offecial Documentation](https://cloud.google.com/docs/authentication/provide-credentials-adc?_gl=1*1bnte70*_ga*MTkyNzM4MTU5Ni4xNzA0MDMzOTc3*_ga_WH2QY8WWF5*MTcxMTA3NTEyMy4yNC4xLjE3MTEwNzk2NjguMC4wLjA.&_ga=2.15902966.-1927381596.1704033977)
+
+- Create a service account key following these steps:
+
+  - **Before applying these steps, make sure to grant these roles: Service Account Key Admin, Service Account Token Creator**
+  - From AIM and Admin list, navigate to the Service accounts page in the Google Cloud console and create your first service account.
+  - Select the project and service account for which you want to create a key.
+  - Click on the Keys tab and locate the Add key drop-down menu.
+  - From the drop-down menu, choose the Create new key option.
+  - Select JSON as the Key type and click the Create button
+
 - Set environment variable to point to your downloaded GCP keys:
 
   ```
@@ -81,4 +95,5 @@ IAM Roles for Service account:
 
   ```
   export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
+  gcloud auth application-default login
   ```
