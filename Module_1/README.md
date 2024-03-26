@@ -11,9 +11,9 @@ This file aims at instructing the user to have the following setup:
 
 ## Installing Chocolatey
 
-- Install with powershell.exe
+Install with powershell.exe:
 
-- With PowerShell, you must ensure Get-ExecutionPolicy is not Restricted. We suggest using Bypass to bypass the policy to get things installed or AllSigned for quite a bit more security.
+- With PowerShell, you must ensure `Get-ExecutionPolicy` is not `Restricted`. We suggest using Bypass to bypass the policy to get things installed or AllSigned for quite a bit more security.
 
 - Run `Get-ExecutionPolicy`. If it returns `Restricted`, then run `Set-ExecutionPolicy AllSigned` or `Set-ExecutionPolicy Bypass -Scope Process`.
 
@@ -114,8 +114,8 @@ IAM Roles for Service account:
       }
     }
   }
-  
-  
+
+
   provider "google" {
     project = "resounding-node-418001"
     region  = "us-central1"
