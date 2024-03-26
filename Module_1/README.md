@@ -65,7 +65,8 @@ Open a PowerShell terminal and run the following PowerShell commands:
   - Select the project and service account for which you want to create a key.
   - Click on the Keys tab and locate the Add key drop-down menu.
   - From the drop-down menu, choose the Create new key option.
-  - Select JSON as the Key type and click the Create button
+  - Select JSON as the Key type and click the Create button. You can create up to 10 keys. A key is never expired but you can configure [an expiry date](https://cloud.google.com/resource-manager/docs/resource-settings/overview#iam-serviceAccountKeyExpiry).
+  - Download the service account keys JSON file to use with [Terraform Google Porivder for GCP](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference)
 
 - Set environment variable to point to your downloaded GCP keys:
 
@@ -97,3 +98,32 @@ IAM Roles for Service account:
   export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
   gcloud auth application-default login
   ```
+
+## Terraform Setup
+
+- Save the service account keys JSON file in you project repo. **Add it to `.gitignore` file**
+- Create a `main.tf` file to save Terraform-GCP configurations.
+- Copy-paste the following object in `main.tf` file:
+
+  ```
+    terraform {
+    required_providers {
+      google = {
+        source  = "hashicorp/google"
+        version = "5.21.0"
+      }
+    }
+  }
+
+
+  provider "google" {
+    project = "prject-id"
+    region  = "us-central1"
+  }
+  ```
+
+- In project terminal, create an environment variable, Terraform guides users to name it `GOOGLE_CREDENTIALS` to be used later in Terraform Cloud service so that no need to hard-code your account service key. Follow the same guide locally:
+  ```
+  export GOOGLE_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
+  ```
+- Once finished, run `terraform init` to initialize basic Terraform infrastructure file in your project.
