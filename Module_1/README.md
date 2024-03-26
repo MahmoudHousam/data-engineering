@@ -127,3 +127,45 @@ IAM Roles for Service account:
   export GOOGLE_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
   ```
 - Once finished, run `terraform init` to initialize basic Terraform infrastructure file in your project.
+
+## Terraform infrastructure Setup Demo with GCP
+
+The following example is a demo for creating a cloud storage backet on GCP.
+
+- Instantiate a Terraform google_storage_bucket object in your `main.tf` file. An example:
+
+  ```
+  resource "google_storage_bucket" "auto-expire" {
+    name          = "auto-expiring-bucket"
+    location      = "US"
+    force_destroy = true
+
+    lifecycle_rule {
+      condition {
+        age = 3
+      }
+      action {
+        type = "Delete"
+      }
+    }
+
+    lifecycle_rule {
+      condition {
+        age = 1
+      }
+      action {
+        type = "AbortIncompleteMultipartUpload"
+      }
+    }
+  }
+  ```
+
+  Find more info and reference on [Terraform Registry | GCP Cloud Bucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket)
+
+- Type `terraform plan -out "name-your-plan"` (e.g. `terraform plan -out "gcb_storage_bucket_plan"`)
+- Type `terraform apply "your-plan-name"`. Navigate to GCP|Cloud Storage page and see the newly bucket created.
+- As this is for demonstration purposes only, remember to `terraform destroy` to delete the bucket.
+- For plan-versioning and code review purposes, convert your terraform plan to a human-readable format via this command `terraform show -json "your_plan_name" | jq > your_plan_name.json`
+  - `jq` is a command-line tool to filter and transform JSON data.
+
+**Side note:** If you want to dive deep with `terraform plan`, check out [Create a Terraform Plan](https://developer.hashicorp.com/terraform/tutorials/cli/plan)
