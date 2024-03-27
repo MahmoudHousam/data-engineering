@@ -1,4 +1,4 @@
-# Practice Makes Perfect - Data Engineering
+# Project-based Learning - Data Engineering
 
 This repository is dedicated to honing skills in data engineering through practical projects and exercises. The objective behind this repository is to provide hands-on experience by leveraging Python and SQL programming languages, along with a diverse set of technologies and tools commonly used in the field of data engineering.
 
@@ -15,7 +15,7 @@ This repository is dedicated to honing skills in data engineering through practi
 - Terraform
 - PostgreSQL
 - Google Cloud Platform (GCP)
-- Mage
+- Mage (alternative to Airflow)
 - BigQuery
 - DBT (Data Build Tool)
 - Apache Spark (Python & SQL)
