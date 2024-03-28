@@ -1,6 +1,6 @@
 # Project-based Learning - Data Engineering
 
-This repository is dedicated to honing skills in data engineering through practical projects and exercises. The objective behind this repository is to provide hands-on experience by leveraging Python and SQL programming languages, along with a diverse set of technologies and tools commonly used in the field of data engineering.
+This repository is dedicated to honing skills in healthcare data engineering through practical projects and exercises with support from [Synthea](https://github.com/synthetichealth/synthea), a synthetic clinical data simulator to output realistic, but not real, patient data. The objective behind this repository is to provide hands-on experience by leveraging Python and SQL programming languages, along with a diverse set of technologies and tools commonly used in the field of data engineering.
 
 ## Tech Stack
 
