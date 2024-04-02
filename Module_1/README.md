@@ -8,7 +8,16 @@ This file aims at instructing the user to have the following setup:
 - Terraform
 - Google Cloud SDK
 - Create GCP account and set configurations for your project
-- Exemplify GCP and Terraform to create a GCP bucket and a BigQuery basic dataset
+
+## Objective
+
+By the end of this module, you should be familiarized with the following
+
+- Build two Docker images: PostgreSQL and PG-Admin4
+- Run two containers and linking them with a Docker network
+- Create a simple pipeline that will ingest a dataset from the web and pull it to a PostgreSQL database in batches.
+  Till now, the dataset is pulled from the NY taxi data hub but soon a synthetic patient data will be used.
+- Exemplify GCP and Terraform to create a GCP bucket and a BigQuery basic dataset instance
 
 ## Installing Chocolatey
 
