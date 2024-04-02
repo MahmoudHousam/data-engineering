@@ -102,8 +102,8 @@ IAM Roles for Service account:
 ## Terraform Setup
 
 - Save the service account keys JSON file in you project repo. **Add it to `.gitignore` file**
-- Create a `main.tf` file to save Terraform-GCP configurations.
-- Copy-paste the following object in `main.tf` file:
+- Create a `gcp_plan.tf` file to save Terraform-GCP configurations.
+- Copy-paste the following object in `gcp_plan.tf` file:
 
   ```
   terraform {
@@ -114,8 +114,8 @@ IAM Roles for Service account:
       }
     }
   }
-  
-  
+
+
   provider "google" {
     project = "resounding-node-418001"
     region  = "us-central1"
@@ -168,8 +168,8 @@ The following example is a demo for creating a cloud storage backet on GCP.
 
   Remember to enable the BigQuery API on you GCP console.
 
-- Type `terraform plan -out "name-your-plan"` (e.g. `terraform plan -out "gcb_storage_bucket_plan"`)
-- Type `terraform apply "your-plan-name"`. Navigate to GCP|Cloud Storage page and see the newly bucket created.
+- Run `terraform plan -out "name-your-plan"` (e.g. `terraform plan -out "gcb_storage_bucket_plan"`)
+- Run `terraform apply "your-plan-name"`. Navigate to GCP|Cloud Storage page and see the newly bucket and BigQuery basic dataset created.
 - As this is for demonstration purposes only, remember to `terraform destroy` to delete the bucket.
 - For plan-versioning and code review purposes, convert your terraform plan to a human-readable format via this command `terraform show -json "your_plan_name" | jq > your_plan_name.json`
   - `jq` is a command-line tool to filter and transform JSON data. To install it, run `choco install jq`
