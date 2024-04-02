@@ -106,7 +106,7 @@ IAM Roles for Service account:
 - Copy-paste the following object in `main.tf` file:
 
   ```
-    terraform {
+  terraform {
     required_providers {
       google = {
         source  = "hashicorp/google"
@@ -114,10 +114,10 @@ IAM Roles for Service account:
       }
     }
   }
-
-
+  
+  
   provider "google" {
-    project = "prject-id"
+    project = "resounding-node-418001"
     region  = "us-central1"
   }
   ```
