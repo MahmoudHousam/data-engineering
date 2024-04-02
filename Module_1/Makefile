@@ -59,3 +59,14 @@ data_ingestion:
 
 data_ingestion_down:
 	docker stop data_ingest
+
+
+apply_gcp_plan:
+	terraform plan -out "gcp_terraform_plan" && \
+	terraform show -json "gcp_terraform_plan" | jq > gcp_terraform_plan.json && \
+	terraform apply "gcp_terraform_plan" \
+
+
+
+destroy_gcp_plan:
+	terraform destroy

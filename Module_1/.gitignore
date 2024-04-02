@@ -1,5 +1,6 @@
 /keys/gcp_creds.json
 *.json
+gcp_terraform_plan
 
 # Local .terraform directories
 **/.terraform/*

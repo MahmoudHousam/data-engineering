@@ -27,3 +27,8 @@ resource "google_storage_bucket" "de-cloud-practice" {
     }
   }
 }
+
+
+resource "google_bigquery_dataset" "create_demo" {
+  dataset_id = "bq_demo_01"
+}
