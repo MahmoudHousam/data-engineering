@@ -8,6 +8,7 @@ This file aims at instructing the user to have the following setup:
 - Terraform
 - Google Cloud SDK
 - Create GCP account and set configurations for your project
+- Exemplify GCP and Terraform to create a GCP bucket and a BigQuery basic dataset
 
 ## Installing Chocolatey
 
