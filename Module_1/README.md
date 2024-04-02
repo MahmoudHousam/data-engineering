@@ -9,6 +9,16 @@ This file aims at instructing the user to have the following setup:
 - Google Cloud SDK
 - Create GCP account and set configurations for your project
 
+## Objective
+
+By the end of this module, you should be familiarized with the following
+
+- Build two Docker images: PostgreSQL and PG-Admin4
+- Run two containers and linking them with a Docker network
+- Create a simple pipeline that will ingest a dataset from the web and pull it to a PostgreSQL database in batches.
+  Till now, the dataset is pulled from the NY taxi data hub but soon a synthetic patient data will be used.
+- Exemplify GCP and Terraform to create a GCP bucket and a BigQuery basic dataset instance
+
 ## Installing Chocolatey
 
 Install with powershell.exe:
@@ -102,8 +112,8 @@ IAM Roles for Service account:
 ## Terraform Setup
 
 - Save the service account keys JSON file in you project repo. **Add it to `.gitignore` file**
-- Create a `main.tf` file to save Terraform-GCP configurations.
-- Copy-paste the following object in `main.tf` file:
+- Create a `gcp_plan.tf` file to save Terraform-GCP configurations.
+- Copy-paste the following object in `gcp_plan.tf` file:
 
   ```
   terraform {
@@ -132,7 +142,7 @@ IAM Roles for Service account:
 
 The following example is a demo for creating a cloud storage backet on GCP.
 
-- Instantiate a Terraform google_storage_bucket object in your `main.tf` file. An example:
+- Instantiate a Terraform `google_storage_bucket` and `google_bigquery_dataset` objects in your `gcp_plan.tf` file. An example:
 
   ```
   resource "google_storage_bucket" "auto-expire" {
@@ -158,14 +168,21 @@ The following example is a demo for creating a cloud storage backet on GCP.
       }
     }
   }
+
+  resource "google_bigquery_dataset" "create_demo" {
+  dataset_id = "bq_demo_01"
+  }
   ```
 
-  Find more info and reference on [Terraform Registry | GCP Cloud Bucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket)
+  Find more info and reference on [Terraform Registry | GCP Cloud Bucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket), [Terraform Registry | BigQuery Dataset Basic](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/bigquery_dataset).
 
-- Type `terraform plan -out "name-your-plan"` (e.g. `terraform plan -out "gcb_storage_bucket_plan"`)
-- Type `terraform apply "your-plan-name"`. Navigate to GCP|Cloud Storage page and see the newly bucket created.
+  Remember to enable the BigQuery API on you GCP console.
+
+- Run `terraform plan -out "name-your-plan"` (e.g. `terraform plan -out "gcb_storage_bucket_plan"`)
+- Run `terraform apply "your-plan-name"`. Navigate to GCP|Cloud Storage page and see the newly bucket and BigQuery basic dataset created.
 - As this is for demonstration purposes only, remember to `terraform destroy` to delete the bucket.
 - For plan-versioning and code review purposes, convert your terraform plan to a human-readable format via this command `terraform show -json "your_plan_name" | jq > your_plan_name.json`
-  - `jq` is a command-line tool to filter and transform JSON data.
+  - `jq` is a command-line tool to filter and transform JSON data. To install it, run `choco install jq`
+- Instead, run `make terraform_plan` and `make terraform_destroy_plan`
 
 **Side note:** If you want to dive deep with `terraform plan`, check out [Create a Terraform Plan](https://developer.hashicorp.com/terraform/tutorials/cli/plan)

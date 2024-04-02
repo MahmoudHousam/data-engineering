@@ -45,6 +45,7 @@ psql_connect:
 download_data:
 	curl -KLSs $(DATA_URL) -o yellow_tripdata_2023-01.parquet
 
+
 data_ingestion:
 	docker run -it \
 	--network=pg-network \
@@ -59,3 +60,17 @@ data_ingestion:
 
 data_ingestion_down:
 	docker stop data_ingest
+
+
+apply_gcp_plan:
+	terraform plan -out "gcp_terraform_plan" && \
+	terraform show -json "gcp_terraform_plan" | jq > gcp_terraform_plan.json && \
+	terraform apply "gcp_terraform_plan" \
+
+
+destroy_gcp_plan:
+	terraform destroy
+
+
+format_terraform:
+	terraform fmt
