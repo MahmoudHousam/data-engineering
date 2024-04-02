@@ -9,13 +9,14 @@ terraform {
 
 
 provider "google" {
-  project = "resounding-node-418001"
-  region  = "us-central1"
+  credentials = file(var.credentials)
+  project     = var.project
+  region      = var.region
 }
 
 resource "google_storage_bucket" "de-cloud-practice" {
-  name          = "node-418001-terra-practice"
-  location      = "US"
+  name          = var.gcp_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -30,5 +31,5 @@ resource "google_storage_bucket" "de-cloud-practice" {
 
 
 resource "google_bigquery_dataset" "create_demo" {
-  dataset_id = "bq_demo_01"
+  dataset_id = var.bq_basic_dataset
 }
