@@ -183,6 +183,6 @@ The following example is a demo for creating a cloud storage backet on GCP.
 - As this is for demonstration purposes only, remember to `terraform destroy` to delete the bucket.
 - For plan-versioning and code review purposes, convert your terraform plan to a human-readable format via this command `terraform show -json "your_plan_name" | jq > your_plan_name.json`
   - `jq` is a command-line tool to filter and transform JSON data. To install it, run `choco install jq`
-- Instead, run `make terraform_plan` and `make terraform_destroy_plan`
+- Instead, run `make apply_gcp_plan` and `make destroy_gcp_plan`
 
 **Side note:** If you want to dive deep with `terraform plan`, check out [Create a Terraform Plan](https://developer.hashicorp.com/terraform/tutorials/cli/plan)
