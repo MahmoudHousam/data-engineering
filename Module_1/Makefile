@@ -31,7 +31,7 @@ pgadmin:
 	dpage/pgadmin4
 
 
-pgadmi_down:
+pgadmin_down:
 	docker stop pg-admin4
 
 
