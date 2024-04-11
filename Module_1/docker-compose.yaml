@@ -4,10 +4,10 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=ny_taxi
+      - POSTGRES_DB=mimiciii
     volumes:
       # rw: permissions to read and write
-      - "c:/ZoomCamp/data-engineering/Module_1/ny_taxi_data:/var/lib/postgresql/data:rw"
+      - "c:/ZoomCamp/data-engineering/module_1/mimiciii_data:/var/lib/postgresql/data:rw"
     ports:
       - 5430:5432
 

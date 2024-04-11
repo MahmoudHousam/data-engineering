@@ -1,4 +1,4 @@
-DATA_PATH = c:/ZoomCamp/data-engineering/Module_1/ny_taxi_data
+DATA_PATH = c:/ZoomCamp/data-engineering/module_1/mimiciii_data
 DATA_URL = https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet
 
 docker_network:
@@ -9,7 +9,7 @@ postgres:
 	docker run -it \
 	-e POSTGRES_USER="root" \
 	-e POSTGRES_PASSWORD="root" \
-	-e POSTGRES_DB="ny_taxi" \
+	-e POSTGRES_DB="mimiciii" \
 	-v $(DATA_PATH):/var/lib/postgresql/data \
 	-p 5430:5432 \
 	--network pg-network \
@@ -40,10 +40,7 @@ psql_connect:
 	-h localhost \
 	-p 5430 \
 	-u root \
-	-d ny_taxi 
-
-download_data:
-	curl -KLSs $(DATA_URL) -o yellow_tripdata_2023-01.parquet
+	-d mimiciii 
 
 
 data_ingestion:
@@ -54,8 +51,8 @@ data_ingestion:
 	--password=root \
 	--host=pg-database \
 	--port=5432 \
-	--db=ny_taxi \
-	--table_name=yellow_taxi_trips
+	--db=mimiciii \
+	--table_name=patient_admission_to_icu
 	--url=$(DATA_URL)
 
 data_ingestion_down:
