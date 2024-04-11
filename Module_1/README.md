@@ -15,8 +15,7 @@ By the end of this module, you should be familiarized with the following
 
 - Build two Docker images: PostgreSQL and PG-Admin4
 - Run two containers and linking them with a Docker network
-- Create a simple pipeline that will ingest a dataset from the web and pull it to a PostgreSQL database in batches.
-  Till now, the dataset is pulled from the NY taxi data hub but soon a synthetic patient data will be used.
+- Create a simple pipeline that ingests a dataset from the web and pull it to a PostgreSQL database. **ICU synthesized clinical data is used**
 - Exemplify GCP and Terraform to create a GCP bucket and a BigQuery basic dataset instance
 
 ## Installing Chocolatey

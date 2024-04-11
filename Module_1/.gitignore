@@ -1,5 +1,7 @@
+/mimiciii_data
 /keys/gcp_creds.json
 *.json
+*.csv
 gcp_terraform_plan
 
 # Local .terraform directories
