@@ -1,5 +1,5 @@
 DATA_PATH = c:/ZoomCamp/data-engineering/module_1/mimiciii_data
-DATA_URL = https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet
+DATA_URL = "https://raw.githubusercontent.com/MahmoudHousam/data-engineering/upload_mimic_data/Module_1/mimic3c.csv"
 
 docker_network:
 	docker network create pg-network
