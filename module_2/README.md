@@ -12,9 +12,9 @@ By the end of this module, you should be able to:
 # Installing Mage Instance
 
 - `git clone git clone https://github.com/mage-ai/mage-zoomcamp.git mage-zoomcamp`
-- `cp dev.env .env` and then remove dev.env file
-- `docker compose build`
-- `docker compose up`
+- `cp dev.env .env && rm dev.env` to create a copy of dev.env and then remove it.
+- `docker compose build` to build the image
+- `docker compose up -d` to run Mage locally
 - Now, navigate to http://localhost:6789 in your browser!
 - This should have the following structure
   ```
